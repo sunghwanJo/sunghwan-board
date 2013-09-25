@@ -1,0 +1,23 @@
+form.jsp 파일의 method가 뭘까?
+	GET, POST 등 웹요청 종류를 명시하는 것
+	
+왜 BoardController.create()는 method를 지정할까?
+	왜냐하면 form.jsp 에서 action을 POST로 지정했기 때문에
+		? form.jsp에서 POST를 지정하고 .create()에서 method를 GET으로 지정한다면?
+			HTTP Status 405 - Request method 'POST' not supported 이라는 Log를 뿌려냄
+	즉, 그 Controller가 허용하는 method를 명시하는것임 이라고 결론을 내려봄	
+		
+BoardController에서 method를 지정하지 않은 form()은 뭐지?
+	method가 딱히 필요없는것,  아마 Default가 GET이니까 GET이 기본으로 허용되겠지? 
+	[추측]하지만 method=RequestMethod.POST로 지정하면 GET은 Default가 안될꺼
+ 
+BoardController.create()의 반환 값에 “redirect:/”는 뭐지?
+	redirect는 보내버리는 것임 원래는 반환값에 파일명을 넣었겠지만 URL로 처리를 가능하게 해줌
+		redirect:/board/write로 설정했을경우 글을 작성해도 바로 그냥 글을 작성함
+
+BoardController 클래스를 보니 중복이 있다. 중복 제거할 수 없을까? 
+	아직 어디가 중복인진 모르겠따.
+
+BoardController.create()에서 System.out.println() 사용해 출력만 하고 있다. 다음으로 무슨 작업을 해야 할까?
+	1. 글을 DB에 저장
+	2. 그 결과값을 (성공, 실패 여부)를 사용자에게 전달 
