@@ -21,3 +21,24 @@ BoardController 클래스를 보니 중복이 있다. 중복 제거할 수 없�
 BoardController.create()에서 System.out.println() 사용해 출력만 하고 있다. 다음으로 무슨 작업을 해야 할까?
 	1. 글을 DB에 저장
 	2. 그 결과값을 (성공, 실패 여부)를 사용자에게 전달 
+	
+	
+=== 2주차
+
+GET vs POST
+	GET은 서버에서 자원을 조회하는 경우
+	POST는 서버에서 자원을 추가하거나 상태를 변경하는 경우
+	
+forward 방식 : return <jsp_file_name> : 직접 파일을 요청
+'redirect:/'는 : url접근방식
+
+	
+네트워크상에 서로 주고받는게 다 
+return 'index.jsp'
+	return 200
+	Controller가 index.jsp를 보내버리는 방
+return 'redirect:/'
+	return 302 (redirect 코드)
+	2번의 네트웤 비용 발생
+		하지만, 데이터 전송, 조회 두가지로 분리 가능
+	

@@ -13,8 +13,11 @@ public class BoardController {
 		return "form";
 	}
 	@RequestMapping(value="/", method=RequestMethod.GET)
-	public String create(String title, String article){
-		System.out.println("title : "+title+" article : "+ article);
+	public String create(Board board){
+		System.out.println("Board [WTF]: " + board);
+		System.out.println("TEST");
+		System.out.println("Board [tostring]: " + board.toString());
+		
 		return "redirect:/";
 	}
 }
