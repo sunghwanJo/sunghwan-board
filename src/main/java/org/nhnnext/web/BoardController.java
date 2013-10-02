@@ -21,8 +21,14 @@ public class BoardController {
 	public String create(Board board){
 		System.out.println("Board" + board);
 		
+		Board savedBoard = boardRepository.save(board);
+	
+		return "redirect:/"+savedBoard.getId();
+	}
+	
+	@RequestMapping(value="/{id}")
+	public String show(@PathVariable Long id){
 		
-		
-		return "redirect:/";
+		return "show";
 	}
 }
