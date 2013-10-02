@@ -9,6 +9,6 @@
 <body>
 title : ${board.title}
 contents : ${board.contents}
-
+<img src="/images/${board.fileName}" width="400" height="400"/>
 </body>
 </html>
