@@ -7,6 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="/board/write">글쓰기</a>
+	<div class="container">
+		<div class="header">
+		
+		</div>
+		<div class="contents">
+			<h1>Sunghwan Board</h1>
+			<a href="/board/write">글쓰기</a>
+		</div>
+		
+	</div>
 </body>
 </html>

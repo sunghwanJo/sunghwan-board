@@ -5,12 +5,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
+@RequestMapping(value="/board")
 public class BoardController {
-	@RequestMapping(value="/board/write")
+	
+	@RequestMapping(value="/write")
 	public String write(){
 		return "form";
 	}
-	@RequestMapping(value="/board", method=RequestMethod.GET)
+	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String create(String title, String article){
 		System.out.println("title : "+title+" article : "+ article);
 		return "redirect:/";
