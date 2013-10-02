@@ -17,9 +17,11 @@ public class BoardController {
 	public String write(){
 		return "form";
 	}
-	@RequestMapping(value="/", method=RequestMethod.GET)
+	@RequestMapping(value="/", method=RequestMethod.POST)
 	public String create(Board board){
-		System.out.println("Board [WTF]: " + board);
+		System.out.println("Board" + board);
+		
+		
 		
 		return "redirect:/";
 	}
