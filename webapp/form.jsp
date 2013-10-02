@@ -8,9 +8,10 @@
 </head>
 <body>
 <h1>글쓰기 화면</h1>
-<form action="/board" method="POST">
+<form action="/board" method="POST" enctype="multipart/form-data">
 	<div><label for="title">제목 : </label><input type="text" name="title" size=30 /></div>
 	<div><textarea name="contents" cols="40" rows="5"></textarea></div>
+	<div><label for="file">제목 : </label><input type="file" name="file" size=30 /></div>
 	<div><input type="submit" value="올리기"></div>
 </form>
 </body>
