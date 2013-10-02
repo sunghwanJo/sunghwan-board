@@ -12,5 +12,9 @@
 <div>
 	<img src="/images/${board.fileName}" width="400" height="400"/>
 </div>
+<div>
+	<a href="/board/update/${board.id}">수정하기</a> | 
+	<a href="/board/delete/${board.id}">삭제하기</a>
+</div>
 </body>
 </html>

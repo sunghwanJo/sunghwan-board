@@ -16,10 +16,26 @@ public class BoardController {
 	@Autowired
 	private BoardRepository boardRepository;
 	
+	@RequestMapping(value="/delete/{id}")
+	public String delete(@PathVariable Long id){
+		Board deleteBoard = boardRepository.findOne(id);
+		boardRepository.delete(deleteBoard);
+		
+		return "redirect:/";
+	}
 	
 	@RequestMapping(value="/write")
 	public String write(){
 		return "form";
+	}
+	
+
+	@RequestMapping(value="/update/{id}")
+	public String update(@PathVariable Long id, Model model){
+		Board getBoard = boardRepository.findOne(id);
+		model.addAttribute("board", getBoard);
+		
+		return "update";
 	}
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public String create(Board board, MultipartFile file){
@@ -32,6 +48,20 @@ public class BoardController {
 		return "redirect:/board/"+savedBoard.getId();
 	}
 	
+	@RequestMapping(value="{id}", method=RequestMethod.POST)
+	public String update(Board board, MultipartFile file, @PathVariable Long id){
+		
+		FileUploader.upload(file);
+		board.setFileName(file.getOriginalFilename());
+		Board updateBoard = boardRepository.findOne(id);
+		updateBoard.setTitle(board.getTitle());
+		updateBoard.setContents(board.getContents());
+		updateBoard.setFileName(file.getOriginalFilename());
+		boardRepository.save(updateBoard);
+		
+		return "redirect:/board/"+updateBoard.getId();
+	}
+	
 	@RequestMapping(value="/{id}")
 	public String show(@PathVariable Long id, Model model){
 		Board getBoard = boardRepository.findOne(id);
@@ -39,4 +69,5 @@ public class BoardController {
 		
 		return "show";
 	}
+	
 }
