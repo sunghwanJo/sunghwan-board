@@ -1,10 +1,14 @@
-package org.nhnnext.web;
+package org.nhnnext.model;
+
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Board {
@@ -22,6 +26,13 @@ public class Board {
 	@Column(length=100, nullable=true)
 	private String fileName;
 
+	@OneToMany(mappedBy="board", fetch=FetchType.EAGER)
+	private List<Comment> comments;
+	
+	public List<Comment> getComments() {
+		return comments;
+	}
+	
 	public Long getId() {
 		return id;
 	}

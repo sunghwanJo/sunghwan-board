@@ -1,6 +1,8 @@
-package org.nhnnext.web;
+package org.nhnnext.controller;
 
+import org.nhnnext.model.Board;
 import org.nhnnext.repository.BoardRepository;
+import org.nhnnext.repository.CommentRepository;
 import org.nhnnext.support.FileUploader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -73,6 +75,7 @@ public class BoardController {
 	public String show(@PathVariable Long id, Model model){
 		Board getBoard = boardRepository.findOne(id);
 		model.addAttribute("board", getBoard);
+		model.addAttribute("comments", getBoard.getComments());
 		
 		return "show";
 	}

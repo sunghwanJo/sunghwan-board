@@ -20,16 +20,22 @@
 			href="/board/delete/${board.id}">삭제하기</a>
 	</div>
 	<hr />
-	<div class="reply_section">
-		<form action="/board/comment/${board.id}" method="POST">
+	<div class="comment_section">
+		<form action="/comment/${board.id}" method="POST">
 			<div>
-				<input type="text" name="reply"/> | <input type="submit" value="댓글쓰기" />
+				<textarea name="contents"></textarea>
+				| <input type="submit" value="댓글쓰기">
 			</div>
 		</form>
 	</div>
 	<hr />
-	<div class="show_reply_section">
+	<div class="show_comment_section">
 		<h1>댓글 목록</h1>
+		<ul class="comment_list">
+			<c:forEach items="${comments}" var="comment">
+				<li>${comment}</li>
+			</c:forEach>
+		</ul>
 	</div>
 </body>
 </html>
