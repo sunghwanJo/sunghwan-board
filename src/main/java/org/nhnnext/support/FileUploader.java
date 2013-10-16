@@ -4,6 +4,11 @@ import java.io.File;
 
 import org.springframework.web.multipart.MultipartFile;
 
+/**
+ * 
+ * @author josunghwan
+ *
+ */
 public class FileUploader {
 	private static final String ATTACHMENT_ROOT_DIR = "/Users/josunghwan/Projects/eclipse_workspace/sunghwan-board/webapp/images";
 

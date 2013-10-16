@@ -1,7 +1,17 @@
 package org.nhnnext.util;
 
+/**
+ * 
+ * @author josunghwan
+ *
+ */
 public class EncryptUtil {
 
+	/**
+	 * src String을 기반으로 MD5 암호화 후 결과값을 반환
+	 * @param src
+	 * @return temp 	암호화된 String
+	 */
 	public static String encryptString(String src) {
 		java.security.MessageDigest md5 = null;
 		try {

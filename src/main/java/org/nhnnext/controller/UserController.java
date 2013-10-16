@@ -22,11 +22,24 @@ public class UserController {
 	@Autowired
 	UserRepository userRepository;
 	
+	
+	/**
+	 * GET요청을 받아들여서 login.jsp를 보여
+	 * @return
+	 */
 	@RequestMapping(value = "/login")
 	public String form() {
 		return "login";
 	}
 
+	/**
+	 * POST요청을 받아들여서 로그인처리함. userRepository에서 email을 기반으로 user인스턴스를 가져와 checkPassowrd Method를 통해 password를 비교
+	 * @param email
+	 * @param password
+	 * @param model
+	 * @param session
+	 * @return
+	 */
 	@RequestMapping(value = "/login", method=RequestMethod.POST)
 	public String login(String email, String password, Model model, HttpSession session) {
 	
@@ -39,18 +52,32 @@ public class UserController {
 		return "redirect:/";
 	}
 
+	/**
+	 * Logout처리를 한 후 :/ 로 돌려보냄
+	 * @param session
+	 * @return
+	 */
 	@RequestMapping(value = "/logout", method=RequestMethod.POST)
 	public String logout(HttpSession session) {
 		session.removeAttribute("email");
 		return "redirect:/";
 	}
 	
+	/**
+	 * GET요청을 받아들여 회원가입페이지를 보여줌
+	 * @return
+	 */
 	@RequestMapping(value = "/register")
 	public String register_page() {
 		
 		return "register";
 	}
 	
+	/**
+	 * POST요청을 받아들여 회원을 생성함
+	 * @param user
+	 * @return
+	 */
 	@RequestMapping(value = "/register", method=RequestMethod.POST)
 	public String register(User user) {
 		

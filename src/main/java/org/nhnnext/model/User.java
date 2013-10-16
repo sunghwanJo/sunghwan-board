@@ -6,7 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import org.nhnnext.util.EncryptUtil;
-
+/**
+ * 
+ * @author josunghwan
+ *
+ */
 @Entity
 public class User {
 	@Id
@@ -46,12 +50,21 @@ public class User {
 	
 		return password;
 	}
-
+	
+	/**
+	 * Password를 Set할때 md5로 암호화해서 저장함
+	 * @param password
+	 */
 	public void setPassword(String password) {
 		
 		this.password = EncryptUtil.encryptString(password);
 	}
 
+	/**
+	 * 인자로 넘어온 password와 현재 password를 비교함
+	 * @param password
+	 * @return
+	 */
 	public boolean checkPassword(String password){
 		
 		if(EncryptUtil.encryptString(password) == this.getPassword()){
