@@ -16,13 +16,6 @@ public class BoardController {
 	@Autowired
 	private BoardRepository boardRepository;
 	
-	@RequestMapping(value = "/")
-	public String list(Model model) {
-		model.addAttribute("boards", boardRepository.findAll());
-		
-		return "list";
-	}
-	
 	@RequestMapping(value="/delete/{id}")
 	public String delete(@PathVariable Long id){
 		Board deleteBoard = boardRepository.findOne(id);
@@ -52,6 +45,14 @@ public class BoardController {
 		Board savedBoard = boardRepository.save(board);
 	
 		return "redirect:/board/"+savedBoard.getId();
+	}
+	
+	@RequestMapping(value="/list")
+	public String list(Model model) {
+		model.addAttribute("boards", boardRepository.findAll());
+		model.addAttribute("comments", boardRepository.findAll());
+		
+		return "list";
 	}
 	
 	@RequestMapping(value="{id}", method=RequestMethod.POST)

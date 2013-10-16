@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,11 +11,16 @@
 <div>title : ${board.title}</div>
 <div>contents : ${board.contents}</div>
 <div>
-	<img src="/images/${board.fileName}" width="400" height="400"/>
+	<c:if test="${not empty board.fileName}" >
+		<img src="/images/${board.fileName}" width="400" height="400" />
+	</c:if>
 </div>
 <div>
 	<a href="/board/update/${board.id}">수정하기</a> | 
 	<a href="/board/delete/${board.id}">삭제하기</a>
 </div>
+</body>
+</html>
+
 </body>
 </html>

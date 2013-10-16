@@ -5,11 +5,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>LIST</title>
 </head>
 <body>
 <c:forEach items="${boards}" var="board">
-{$board.title}
+<div>
+	<a href="/board/${board.id}">${board.title}</a>
+</div>
+<hr />
+
 </c:forEach>
+<a href="/board/write">쓰기</a>
 </body>
 </html>

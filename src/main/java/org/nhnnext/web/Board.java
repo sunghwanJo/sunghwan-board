@@ -19,7 +19,7 @@ public class Board {
 	@Column(length=400, nullable=false)
 	private String contents;
 	
-	@Column(length=100, nullable=false)
+	@Column(length=100, nullable=true)
 	private String fileName;
 
 	public Long getId() {
