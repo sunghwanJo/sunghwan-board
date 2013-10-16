@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import org.nhnnext.board.Board;
+import org.nhnnext.user.User;
 /**
  * 
  * @author josunghwan
@@ -26,6 +27,9 @@ public class Comment {
 	@ManyToOne
 	private Board board;
 	
+	@ManyToOne
+	private User user;
+	
 	public Comment(){
 		
 	}
@@ -33,6 +37,10 @@ public class Comment {
 	public Comment(Board board, String contents){
 		this.board = board;
 		this.contents = contents;
+	}
+
+	public String getUserEmail(){
+		return user.getEmail();
 	}
 	
 	public String getContents() {
@@ -50,5 +58,14 @@ public class Comment {
 	public void setBoard(Board board) {
 		this.board = board;
 	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
 
 }

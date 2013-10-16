@@ -42,7 +42,9 @@
 		<h1>댓글 목록</h1>
 		<ul class="comment_list">
 			<c:forEach items="${comments}" var="comment">
-				<li>${comment.contents}</li>
+				<li>
+					<div>${comment.user.email} | ${comment.contents}</div>
+				</li>
 			</c:forEach>
 		</ul>
 	</div>

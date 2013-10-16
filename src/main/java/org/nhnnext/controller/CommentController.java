@@ -1,9 +1,13 @@
 package org.nhnnext.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.nhnnext.board.Board;
 import org.nhnnext.board.BoardRepository;
 import org.nhnnext.comment.Comment;
 import org.nhnnext.comment.CommentRepository;
+import org.nhnnext.user.User;
+import org.nhnnext.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +28,8 @@ public class CommentController {
 	
 	@Autowired
 	private CommentRepository commentdRepository;
+	@Autowired
+	private UserRepository userRepository;
 	
 	/**
 	 * 
@@ -32,10 +38,12 @@ public class CommentController {
 	 * @return
 	 */
 	@RequestMapping(value="/{id}", method=RequestMethod.POST)
-	public String writeComment(Comment comment, @PathVariable Long id){
+	public String writeComment(Comment comment, @PathVariable Long id, HttpSession session){
 		
 		Board foreignBoard = boardRepository.findOne(id);
+		User foreignUser = userRepository.findByEmail((String)session.getAttribute("email"));
 		comment.setBoard(foreignBoard);
+		comment.setUser(foreignUser);
 		
 		commentdRepository.save(comment);
 		

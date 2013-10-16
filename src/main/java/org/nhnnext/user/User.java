@@ -1,10 +1,16 @@
 package org.nhnnext.user;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import org.nhnnext.comment.Comment;
 import org.nhnnext.util.EncryptUtil;
 
 /**
@@ -24,6 +30,10 @@ public class User {
 	@Column(length = 40, nullable = false)
 	private String password;
 
+	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)
+	private List<Comment> comments;
+	
+	
 	User() {
 	}
 
