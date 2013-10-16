@@ -9,15 +9,21 @@
 <body>
 	<form>
 		<div class="container">
-			<form action="/user/login/" method="POST">
+			<form action="/user/register" method="POST">
 				<div>
-					<input name="id" type="text" size=20>
+					<label for="email">email : </label><input name="id" type="text"
+						size=20>
 				</div>
 				<div>
-					<input name="pw" type="password">
+					<label for="password">Password : </label><input name="password"
+						type="password">
 				</div>
 				<div>
-					<input tpye="submit" value="Login"> | <a
+					<label for="password_check">Password Check : </label><input
+						name="password_check" type="password">
+				</div>
+				<div>
+					<input tpye="submit" value="Register"> | <a
 						href="/user/register">Register</a>
 				</div>
 		</div>
