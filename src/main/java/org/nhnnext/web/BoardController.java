@@ -16,6 +16,13 @@ public class BoardController {
 	@Autowired
 	private BoardRepository boardRepository;
 	
+	@RequestMapping(value = "/")
+	public String list(Model model) {
+		model.addAttribute("boards", boardRepository.findAll());
+		
+		return "list";
+	}
+	
 	@RequestMapping(value="/delete/{id}")
 	public String delete(@PathVariable Long id){
 		Board deleteBoard = boardRepository.findOne(id);
@@ -29,7 +36,6 @@ public class BoardController {
 		return "form";
 	}
 	
-
 	@RequestMapping(value="/update/{id}")
 	public String update(@PathVariable Long id, Model model){
 		Board getBoard = boardRepository.findOne(id);
