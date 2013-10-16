@@ -6,7 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
+/**
+ * 
+ * @author josunghwan
+ *
+ */
 @Entity
 public class Comment {
 	
@@ -43,11 +47,6 @@ public class Comment {
 
 	public void setBoard(Board board) {
 		this.board = board;
-	}
-	
-	@Override
-	public String toString() {
-		return this.contents;
 	}
 
 }

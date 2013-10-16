@@ -10,6 +10,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+/**
+ * Comment와 관련한 기능들이 있는 Controller
+ * @author josunghwan
+ *
+ */
+
 @Controller
 @RequestMapping(value="/comment")
 public class CommentController {
@@ -19,7 +25,12 @@ public class CommentController {
 	@Autowired
 	private CommentRepository commentdRepository;
 	
-	
+	/**
+	 * 
+	 * @param comment	사용자가 적으려는 comment
+	 * @param id		게시글의 ID
+	 * @return
+	 */
 	@RequestMapping(value="/{id}", method=RequestMethod.POST)
 	public String writeComment(Comment comment, @PathVariable Long id){
 		

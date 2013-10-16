@@ -33,7 +33,7 @@
 		<h1>댓글 목록</h1>
 		<ul class="comment_list">
 			<c:forEach items="${comments}" var="comment">
-				<li>${comment}</li>
+				<li>${comment.contents}</li>
 			</c:forEach>
 		</ul>
 	</div>

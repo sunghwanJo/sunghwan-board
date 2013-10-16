@@ -11,10 +11,10 @@
 	<div class="container">
 		<form action="/user/login/" method="POST">
 			<div>
-				<input name="id" type="text" size=20>
+				<input name="email" type="text" size=20>
 			</div>
 			<div>
-				<input name="pw" type="password">
+				<input name="password" type="password">
 			</div>
 			<div>
 				<input type="submit" value="Login">
