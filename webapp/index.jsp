@@ -14,6 +14,8 @@
 		<div class="contents">
 			<h1>Sunghwan Board</h1>
 			<a href="/board/write">글쓰기</a>
+			<a href="/user/register">회원가입</a>
+			<a href="/user/login">로그인</a>
 		</div>
 		
 	</div>

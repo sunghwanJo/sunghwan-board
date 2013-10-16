@@ -7,20 +7,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form>
-		<div class="container">
-			<form action="/user/login/" method="POST">
-				<div>
-					<input name="id" type="text" size=20>
-				</div>
-				<div>
-					<input name="pw" type="password">
-				</div>
-				<div>
-					<input tpye="submit" value="Login"> | <a
-						href="/user/register">Register</a>
-				</div>
-		</div>
-	</form>
+
+	<div class="container">
+		<form action="/user/login/" method="POST">
+			<div>
+				<input name="id" type="text" size=20>
+			</div>
+			<div>
+				<input name="pw" type="password">
+			</div>
+			<div>
+				<input type="submit" value="Login">
+
+			</div>
+		</form>
+	</div>
+
 </body>
 </html>

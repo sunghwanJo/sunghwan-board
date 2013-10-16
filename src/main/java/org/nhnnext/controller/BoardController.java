@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Controller
 @RequestMapping(value="/board")
 public class BoardController {
-	@Autowired
+	@Autowired	
 	private BoardRepository boardRepository;
 	
 	@RequestMapping(value="/delete/{id}")
