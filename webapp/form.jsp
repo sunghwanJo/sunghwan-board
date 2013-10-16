@@ -22,7 +22,7 @@
 			<label for="file">파일</label> <input type="file" name="file" size=30 />
 		</div>
 		<div>
-			<input type="submit" value="수정하기">
+			<input type="submit" value="전송하">
 		</div>
 	</form>
 </body>
