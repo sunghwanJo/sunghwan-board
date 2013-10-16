@@ -21,7 +21,7 @@ public class CommentController {
 	
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.POST)
-	public String write_comment(Comment comment, @PathVariable Long id){
+	public String writeComment(Comment comment, @PathVariable Long id){
 		
 		Board foreignBoard = boardRepository.findOne(id);
 		comment.setBoard(foreignBoard);
