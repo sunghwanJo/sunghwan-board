@@ -1,8 +1,9 @@
 package org.nhnnext.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.nhnnext.board.Board;
 import org.nhnnext.board.BoardRepository;
-import org.nhnnext.comment.CommentRepository;
 import org.nhnnext.support.FileUploader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

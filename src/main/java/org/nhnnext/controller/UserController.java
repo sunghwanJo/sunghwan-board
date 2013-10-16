@@ -43,10 +43,12 @@ public class UserController {
 	@RequestMapping(value = "/login", method=RequestMethod.POST)
 	public String login(String email, String password, Model model, HttpSession session) {
 	
+		System.out.println(email + " : " +password);
+		
 		User user = userRepository.findByEmail(email);
 		if (user.checkPassword(password)){
-			session.setAttribute("eamil", email);
-			return "redirect:/board/";
+			session.setAttribute("email", email);
+			return "redirect:/board/list";
 		};
 		
 		return "redirect:/";
@@ -81,7 +83,7 @@ public class UserController {
 	@RequestMapping(value = "/register", method=RequestMethod.POST)
 	public String register(User user) {
 		
-		user.setPassword(user.getPassword());
+		//user.setPassword(user.getPassword());
 		userRepository.save(user);
 		
 		return "redirect:/";
