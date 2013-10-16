@@ -1,8 +1,8 @@
 package org.nhnnext.controller;
 
-import org.nhnnext.model.Board;
-import org.nhnnext.repository.BoardRepository;
-import org.nhnnext.repository.CommentRepository;
+import org.nhnnext.board.Board;
+import org.nhnnext.board.BoardRepository;
+import org.nhnnext.comment.CommentRepository;
 import org.nhnnext.support.FileUploader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

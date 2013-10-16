@@ -1,6 +1,5 @@
-package org.nhnnext.repository;
+package org.nhnnext.comment;
 
-import org.nhnnext.model.Comment;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

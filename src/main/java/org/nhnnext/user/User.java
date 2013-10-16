@@ -1,4 +1,4 @@
-package org.nhnnext.model;
+package org.nhnnext.user;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

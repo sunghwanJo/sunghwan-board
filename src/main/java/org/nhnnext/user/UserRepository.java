@@ -1,6 +1,5 @@
-package org.nhnnext.repository;
+package org.nhnnext.user;
 
-import org.nhnnext.model.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

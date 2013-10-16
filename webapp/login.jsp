@@ -22,6 +22,9 @@
 			</div>
 		</form>
 	</div>
+	<div>
+		<a href="/user/register">회원가입</a>
+	</div>
 
 </body>
 </html>

@@ -2,8 +2,8 @@ package org.nhnnext.controller;
 
 import javax.servlet.http.HttpSession;
 
-import org.nhnnext.model.User;
-import org.nhnnext.repository.UserRepository;
+import org.nhnnext.user.User;
+import org.nhnnext.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -57,7 +57,7 @@ public class UserController {
 	 * @param session
 	 * @return
 	 */
-	@RequestMapping(value = "/logout", method=RequestMethod.POST)
+	@RequestMapping(value = "/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("email");
 		return "redirect:/";

@@ -1,6 +1,5 @@
-package org.nhnnext.repository;
+package org.nhnnext.board;
 
-import org.nhnnext.model.Board;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

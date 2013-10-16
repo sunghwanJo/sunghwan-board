@@ -1,4 +1,4 @@
-package org.nhnnext.model;
+package org.nhnnext.comment;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+
+import org.nhnnext.board.Board;
 /**
  * 
  * @author josunghwan

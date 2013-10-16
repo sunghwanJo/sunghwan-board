@@ -21,12 +21,21 @@
 	</div>
 	<hr />
 	<div class="comment_section">
-		<form action="/comment/${board.id}" method="POST">
-			<div>
-				<textarea name="contents"></textarea>
-				| <input type="submit" value="댓글쓰기">
-			</div>
-		</form>
+		<c:choose>
+			<c:when test="${not empty sessionScope.email }">
+				<form action="/comment/${board.id}" method="POST">
+					<div>
+						<textarea name="contents"></textarea>
+						| <input type="submit" value="댓글쓰기">
+					</div>
+				</form>
+			</c:when>
+			<c:when test="${empty sessionScope.email }">
+				<div>
+					<a href="/user/login">로그인</a>후에 댓글을 작성하실 수 있습니다.
+				</div>
+			</c:when>
+		</c:choose>
 	</div>
 	<hr />
 	<div class="show_comment_section">

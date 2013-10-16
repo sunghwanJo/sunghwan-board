@@ -12,12 +12,14 @@
 		<div class="contents">
 			<h1>Sunghwan Board</h1>
 			<a href="/board/write">글쓰기</a> <a href="/user/register">회원가입</a>
-			<c:when test="${not empty sessionScope.email}">
-				<a href="/user/login">로그인</a>
-			</c:when>
-			<c:otherwise>
-				<a href="/user/logout">로그아웃</a>
-			</c:otherwise>
+			<c:choose>
+				<c:when test="${ not empty sessionScope.email}">
+					<a href="/user/logout">로그아웃</a>
+				</c:when>
+				<c:when test="${ empty sessionScope.email }">
+					<a href="/user/login">로그인</a>
+				</c:when>
+			</c:choose>
 		</div>
 
 	</div>
