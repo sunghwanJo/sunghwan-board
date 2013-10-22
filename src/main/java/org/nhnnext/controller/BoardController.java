@@ -101,7 +101,7 @@ public class BoardController {
 	public String update(Board board, MultipartFile file, @PathVariable Long id){
 		
 		FileUploader.upload(file);
-		board.setFileName(file.getOriginalFilename());
+		//board.setFileName(file.getOriginalFilename());
 		Board updateBoard = boardRepository.findOne(id);
 		updateBoard.setTitle(board.getTitle());
 		updateBoard.setContents(board.getContents());
