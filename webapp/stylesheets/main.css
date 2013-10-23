@@ -3,40 +3,125 @@
 @import url('reset.css');
 @import url(http://fonts.googleapis.com/css?family=Bubbler+One);
 
-div#wrap {
-	width: 800px;
-	margin-right: auto;
-	margin-left: auto;
-	background-color : #cfff6f;
-	-webkit-border-radius:30px;
+* {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
 }
 
-header>h1 {
-	text-align: center;
-	padding-top : 10px;
-	font-size : 4em;
-	font-weight : 100;
-	letter-spaceing : 0.1em;
-	margin-top: 100px;
-	color : #A66D00;
-}
-
-div#formArea {
-	padding-left: 100px;
-	padding-top: 100px;
-}
-
-#formArea textarea {
+textarea{
 	width: 600px;
 	margin: 20px 0px;
+	margin-right:auto;
+	margin-left:auto;
 	outline:none;
 	border : 0px;
 	resize : none;
 }
 
+#article_title{
+	overflow:auto;
+}
+
+li.level {
+	float:left;
+	margin:10px;
+}
+
+#article_contents{
+	width:600px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+.article_container{
+	margin-top:50px;
+	margin-right:auto;
+	margin-left:auto;
+	width:800px;
+	background-color:#f7f7f7;
+	-webkit-border-radius:30px;
+	-moz-border-radius:30px;
+}
+
+.comment_section{
+	width:600px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.show_comment_section {
+	width:600px;
+	margin-top:50px;
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+
+div.wrap {
+	overflow:auto;
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top:50px;
+	background-color : #f7f7f7;
+	-webkit-border-radius:30px;
+	-moz-border-radius:30px;
+}
+
+div.article_image {
+	width:600px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+header>h1 {
+	text-align: center;
+	padding-top : 10px;
+	font-size : 3em;
+	font-weight : 100;
+	letter-spaceing : 0.1em;
+	margin-top: 30px;
+	color : #A66D00;
+}
+
+div#formArea {
+	width:700px;
+	padding-left: 100px;
+	padding-top: 10px;
+	overflow:auto;
+}
+
 #formArea input[type=submit] {
-	margin-top: 20px;
+	border:none;
+	background-color:#BF6B30;
+	cursor:pointer;	
+	margin: 20px 0px;
 	padding: 5px;
+	width:100px;
+	outline:none;
+	
+	-webkit-border-radius:20px;
+	-moz-border-radius:20px;
+}
+
+.button {
+	border:none;
+	background-color:#BF6B30;
+	cursor:pointer;	
+	margin: 20px 0px;
+	padding: 5px;
+	width:100px;
+	outline:none;
+	
+	-webkit-border-radius:20px;
+	-moz-border-radius:20px;
+	
+}
+
+.button:hover {
+	background-color:#A64500;
 }
 
 input#title {
@@ -44,4 +129,22 @@ input#title {
 	height:30px;
 	outline:none;
 	border : 0px;
+	width : 600px;
+	
+}
+
+.comment {
+	font-size:1em;
+}
+
+.comment_content{
+	
+}
+
+.comment_email{
+	color:#476dd5;
+}
+
+.right {
+	float:right;
 }

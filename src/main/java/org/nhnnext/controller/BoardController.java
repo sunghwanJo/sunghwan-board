@@ -1,9 +1,9 @@
 package org.nhnnext.controller;
 
-import javax.servlet.http.HttpSession;
-
 import org.nhnnext.board.Board;
 import org.nhnnext.board.BoardRepository;
+import org.nhnnext.comment.Comment;
+import org.nhnnext.comment.CommentRepository;
 import org.nhnnext.support.FileUploader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +25,9 @@ public class BoardController {
 	@Autowired	
 	private BoardRepository boardRepository;
 	
+	@Autowired
+	private CommentRepository commentRepository;
+	
 	/**
 	 * id값을 기반으로 게시글을 Database에서 삭제함
 	 * @param id Board의 id
@@ -32,7 +35,10 @@ public class BoardController {
 	 */
 	@RequestMapping(value="/delete/{id}")
 	public String delete(@PathVariable Long id){
-		
+		Board board = boardRepository.findOne(id);
+		for(Comment c : board.getComments()){
+			commentRepository.delete(c);
+		}
 		boardRepository.delete(id);
 		
 		return "redirect:/";
@@ -44,7 +50,7 @@ public class BoardController {
 	 */
 	@RequestMapping(value="/write")
 	public String write(){
-		return "form";
+		return "list";
 	}
 	
 	/**
@@ -74,7 +80,7 @@ public class BoardController {
 		board.setFileName(file.getOriginalFilename());
 		Board savedBoard = boardRepository.save(board);
 	
-		return "redirect:/board/"+savedBoard.getId();
+		return "redirect:/board/list";
 	}
 
 	/**
@@ -85,7 +91,6 @@ public class BoardController {
 	@RequestMapping(value="/list")
 	public String list(Model model) {
 		model.addAttribute("boards", boardRepository.findAll());
-		model.addAttribute("comments", boardRepository.findAll());
 		
 		return "list";
 	}
@@ -108,7 +113,7 @@ public class BoardController {
 		updateBoard.setFileName(file.getOriginalFilename());
 		boardRepository.save(updateBoard);
 		
-		return "redirect:/board/"+updateBoard.getId();
+		return "redirect:/board/list";
 	}
 	
 	/**

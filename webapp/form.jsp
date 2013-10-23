@@ -26,12 +26,13 @@
 							<textarea name="contents" cols="40" rows="5"
 								placeholder="Content">${board.contents}</textarea>
 						</div>
+
 						<div>
-							<label for="file">File</label> <input type="file" name="file"
+							<label for="file">Add File : </label> <input type="file" name="file"
 								size=30 />
 						</div>
-						<div>
-							<input type="submit" value="전송하기">
+						<div class="right">
+							<input type="submit" value="Write">
 						</div>
 					</form>
 				</c:when>

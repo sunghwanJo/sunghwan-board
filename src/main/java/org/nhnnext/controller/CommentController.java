@@ -47,7 +47,7 @@ public class CommentController {
 		
 		commentdRepository.save(comment);
 		
-		return "redirect:/board/"+id;
+		return "redirect:/board/list";
 	}
 }
 
