@@ -1,0 +1,47 @@
+@CHARSET "UTF-8";
+
+@import url('reset.css');
+@import url(http://fonts.googleapis.com/css?family=Bubbler+One);
+
+div#wrap {
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color : #cfff6f;
+	-webkit-border-radius:30px;
+}
+
+header>h1 {
+	text-align: center;
+	padding-top : 10px;
+	font-size : 4em;
+	font-weight : 100;
+	letter-spaceing : 0.1em;
+	margin-top: 100px;
+	color : #A66D00;
+}
+
+div#formArea {
+	padding-left: 100px;
+	padding-top: 100px;
+}
+
+#formArea textarea {
+	width: 600px;
+	margin: 20px 0px;
+	outline:none;
+	border : 0px;
+	resize : none;
+}
+
+#formArea input[type=submit] {
+	margin-top: 20px;
+	padding: 5px;
+}
+
+input#title {
+	padding:5px;
+	height:30px;
+	outline:none;
+	border : 0px;
+}

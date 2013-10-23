@@ -32,8 +32,8 @@ public class BoardController {
 	 */
 	@RequestMapping(value="/delete/{id}")
 	public String delete(@PathVariable Long id){
-		Board deleteBoard = boardRepository.findOne(id);
-		boardRepository.delete(deleteBoard);
+		
+		boardRepository.delete(id);
 		
 		return "redirect:/";
 	}
