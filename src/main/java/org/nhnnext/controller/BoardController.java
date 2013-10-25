@@ -1,5 +1,8 @@
 package org.nhnnext.controller;
 
+import java.util.Collections;
+import java.util.List;
+
 import org.nhnnext.board.Board;
 import org.nhnnext.board.BoardRepository;
 import org.nhnnext.comment.Comment;
@@ -90,7 +93,10 @@ public class BoardController {
 	 */
 	@RequestMapping(value="/list")
 	public String list(Model model) {
-		model.addAttribute("boards", boardRepository.findAll());
+		Iterable<Board> boards = boardRepository.findAll();
+		
+		Collections.reverse( (List<Board>) boards );
+		model.addAttribute("boards", boards);
 		
 		return "list";
 	}
@@ -114,21 +120,6 @@ public class BoardController {
 		boardRepository.save(updateBoard);
 		
 		return "redirect:/board/list";
-	}
-	
-	/**
-	 * 
-	 * @param id	Board의 id임
-	 * @param model	Model임..
-	 * @return show.jsp
-	 */
-	@RequestMapping(value="/{id}")
-	public String show(@PathVariable Long id, Model model){
-		Board getBoard = boardRepository.findOne(id);
-		model.addAttribute("board", getBoard);
-		model.addAttribute("comments", getBoard.getComments());
-		
-		return "show";
 	}
 	
 }
