@@ -8,6 +8,11 @@ body,p,div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,
 	padding: 0
 }
 
+body {
+	margin-top:0px;
+}
+
+
 body,input,textarea,select,button,table {
 	font-family: 'Bubbler One','돋움', Dotum, AppleGothic, sans- serif;
 	font-size: 1em

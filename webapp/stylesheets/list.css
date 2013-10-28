@@ -6,9 +6,10 @@
 
 .container {
 	
+	background-color:#f0f0f0;
 }
 
-.left_section {
+.left_wrapper {
 	position: fixed; left : 0px;
 	width: 350px;
 	height: 100%;
@@ -16,8 +17,54 @@
 	left: 0px;
 }
 
-.left_section>header {
+.left_section {
+	position:relative;	
+	top:30px;
+	height:300px;
+	text-align:center;
 	
+}
+
+.nav > ul {
+	font-size:3.5em;
+	color: #ffffff;
+	width:100%;
+	cursor: pointer;
+	padding-left:0px;
+}
+
+.nav > ul > li:hover {
+	background-color:#ffffff;
+	color:#000;
+	
+}
+
+
+.left_section > header > img {
+	width:200px;
+	
+}
+
+#write_button {
+	margin: 0;
+	border: none;
+	background-color: #7608AA;
+	outline: none;
+	color:#fff;
+}
+
+#write_button:hover {
+	color:#000;
+	background-color:#fff;
+}
+
+#write_form {
+	visibility: hidden;
+	position:fixed;
+}
+
+.left_section>header {
+
 }
 
 .right_section {
