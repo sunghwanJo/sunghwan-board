@@ -5,12 +5,12 @@
 @import url('reset.css');
 
 .container {
-	
-	background-color:#f0f0f0;
+	background-color: #f0f0f0;
 }
 
 .left_wrapper {
-	position: fixed; left : 0px;
+	position: fixed;
+	left: 0px;
 	width: 350px;
 	height: 100%;
 	background-color: #7608AA;
@@ -18,31 +18,27 @@
 }
 
 .left_section {
-	position:relative;	
-	top:30px;
-	height:300px;
-	text-align:center;
-	
+	position: relative;
+	top: 30px;
+	height: 300px;
+	text-align: center;
 }
 
-.nav > ul {
-	font-size:3.5em;
+.nav>ul {
+	font-size: 3.5em;
 	color: #ffffff;
-	width:100%;
+	width: 100%;
 	cursor: pointer;
-	padding-left:0px;
+	padding-left: 0px;
 }
 
-.nav > ul > li:hover {
-	background-color:#ffffff;
-	color:#000;
-	
+.nav>ul>li:hover {
+	background-color: #ffffff;
+	color: #000;
 }
 
-
-.left_section > header > img {
-	width:200px;
-	
+.left_section>header>img {
+	width: 200px;
 }
 
 #write_button {
@@ -50,21 +46,21 @@
 	border: none;
 	background-color: #7608AA;
 	outline: none;
-	color:#fff;
+	color: #fff;
 }
 
 #write_button:hover {
-	color:#000;
-	background-color:#fff;
+	color: #000;
+	background-color: #fff;
 }
 
 #write_form {
 	visibility: hidden;
-	position:fixed;
+	position: fixed;
 }
 
 .left_section>header {
-
+	
 }
 
 .right_section {
@@ -80,7 +76,19 @@
 	padding-top: 50px;
 }
 
-.article_image {
+.back_image {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 100;
+	text-align:center;
+	padding-top:100px;
+	display:none;
+}
+
+
+.	 {
 	text-align: center;
 }
 
@@ -96,7 +104,13 @@
 	
 }
 
+.comment_folder {
+	float: right;
+	margin-right: 80px;
+}
+
 .comment_list {
+	display: none;
 	padding: 0px;
 }
 
@@ -141,7 +155,6 @@
 .comment_form>div>input:hover {
 	background-color: #7608AA;
 	width: 17%;
-	
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-transition: all 0.5s ease-out;

@@ -12,13 +12,17 @@
 </head>
 <body>
 	<div class="container">
+		<div class="back_image">
+			<img src="" width="400" height="400" />
+		</div>
 		<div class="left_wrapper">
 			<div class="left_section">
 				<header>
 					<img src="/images/logo_icon.png">
 				</header>
 				<div>
-					<input id="write_button" type="button" value="Want to write Articles?" />
+					<input id="write_button" type="button"
+						value="Want to write Articles?" />
 					<div id="write_form">
 						<header>
 							<h1>NEW POST</h1>
@@ -92,7 +96,8 @@
 					</div>
 					<div class="comment_section">
 						<span class="comment_size">${fn:length(board.comments)}</span>
-						Comments
+						Comments <span class="comment_folder"><a href="#"
+							onclick="return false">보이기</a></span>
 						<ul class="comment_list">
 							<c:forEach items="${board.comments}" var="comment">
 								<li>
@@ -144,7 +149,73 @@
 			}
 		}
 
+		var commentList = document.querySelectorAll('.comment_list');
+
+		function init_page() {
+			countComments();
+			registerEvents();
+		}
+
+		function countComments() {
+			for ( var i = 0; i < commentList.length; i++) {
+				var currentNode = commentList[i];
+				var nPListCount = currentNode.querySelectorAll('li').length;
+				var commentNum = currentNode.parentNode
+						.querySelector('.comment_size');
+
+				commentNum.innerText = nPListCount + ':';
+			}
+		}
+
+		function registerEvents() {
+			var eleList = document.getElementsByClassName('comment_folder');
+			for ( var i = 0; i < eleList.length; i++) {
+				eleList[i].addEventListener('click', toggleComments, false);
+			}
+			
+			var article_imgs = document.querySelectorAll('.article_image>img');
+			for ( var i = 0; i < article_imgs.length; i++) {
+				article_imgs[i].addEventListener('click', showImage, false);
+			}
+			
+		}
+
+		function toggleComments(e) {
+
+			var commentBodyNode = e.target.parentNode.parentNode;
+			var commentList = commentBodyNode.querySelector('.comment_list');
+
+			var displayState = commentList.style.display;
+
+			if (displayState == "block") {
+				commentList.style.display = "none";
+				e.target.innerText = "보이기";
+			} else {
+				commentList.style.display = "block";
+				e.target.innerText = "접기";
+			}
+
+		}
+		
+		var back_wall = document.querySelector('.back_image');
+		
+		function showImage(e){
+			var back_img = back_wall.querySelector('img');
+			var image_src = e.target.src;
+			
+			back_img.src = image_src;
+			back_img.parentNode.style.display="block";
+			
+		}
+		
+		function hideBackWall(e){
+			back_wall.style.display="none";
+		}
+		
+		back_wall.addEventListener("click", hideBackWall, false);
 		write_button.addEventListener("click", clickWriteButton, false);
+		
+		window.onload = init_page;
 	</script>
 </body>
 </html>
