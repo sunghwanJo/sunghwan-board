@@ -39,6 +39,7 @@
 
 .left_section>header>img {
 	width: 200px;
+	cursor: pointer;
 }
 
 #write_button {
@@ -87,11 +88,6 @@
 	display:none;
 }
 
-
-.	 {
-	text-align: center;
-}
-
 .article_contents {
 	overflow: auto;
 }
@@ -99,6 +95,12 @@
 .article_inner {
 	font-size: 1.1em;
 }
+.article_image {
+	width:100%;
+	text-align:center;
+	cursor: pointer;	
+}
+
 
 .comment_section {
 	
